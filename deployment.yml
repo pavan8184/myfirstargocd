@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prudhvi
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: zomato
+  template:
+    metadata:
+      labels:
+        app: zomato
+    spec:
+      containers:
+        - name: cont-1
+          image: shaikmustafa/netflix:latest
+          ports:
+            - containerPort: 80
